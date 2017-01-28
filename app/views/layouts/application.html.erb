@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Exam2</title>
+  <title>Instagram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+      <img src="<%= asset_path "logo.png" %>">
+      <img src="<%= asset_path "compass.png" %>">
+      <img src="<%= asset_path "heart.png" %>">
+      <img src="<%= asset_path "profile.png" %>">
+  </header>
 
-<%= yield %>
+  <%= yield %>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">INSTAGRAMについて サポート ブログ プレス API</div>
+        <div class="col-sm-8">求人 プライバシー 利用 規約 言語</div>
+        <div class="col-sm-4">© 2017 INSTAGRAM</div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   # before_actionで下で定義したメソッドを実行
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def after_sign_in_path_for(resource)
+    products_url
+  end
+
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name)
 

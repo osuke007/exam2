@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>どうがきょうゆう</title>
+  <title>動画共有</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
+    <section>
+      <p class="flash"><%= notice %><%= alert %></p>
+    </section>
     <% if user_signed_in? %>
       <img class="logo" src="<%= asset_path "logo.png" %>">
       <table class="menu">

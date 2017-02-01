@@ -15,7 +15,7 @@
             <tr>
               <td><%= image_tag("compass.png", {:size => "32x32", :alt => 'compass'}) %></td>
               <td><%= image_tag("heart.png", {:size => "32x32", :alt => 'heart'}) %></td>
-              <td><%= image_tag("profile.png", {:size => "32x32", :alt => 'プロファイル'}) %></td>
+              <td><%= link_to image_tag('profile.png', {:size => "32x32", :alt => 'プロファイル'}), edit_user_registration_path %></td>
               <td><%= link_to image_tag('logout.png', {:size => "32x32", :alt => 'ログアウト'}), destroy_user_session_path, method: :delete %></td>
             </tr>
           </tbody>

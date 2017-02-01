@@ -8,10 +8,12 @@
 </head>
 <body>
   <header>
-      <img src="<%= asset_path "logo.png" %>">
-      <img src="<%= asset_path "compass.png" %>">
-      <img src="<%= asset_path "heart.png" %>">
-      <img src="<%= asset_path "profile.png" %>">
+    <div>
+      <img class="logo" src="<%= asset_path "logo.png" %>">
+      <img class="menu" src="<%= asset_path "profile.png" %>">
+      <img class="menu" src="<%= asset_path "heart.png" %>">
+      <img class="menu" src="<%= asset_path "compass.png" %>">
+    </div>
   </header>
 
   <%= yield %>

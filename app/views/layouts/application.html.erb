@@ -8,11 +8,8 @@
 </head>
 <body>
   <header>
-    <section>
-      <p class="flash"><%= notice %><%= alert %></p>
-    </section>
     <% if user_signed_in? %>
-      <img class="logo" src="<%= asset_path "logo.png" %>">
+      <%= link_to image_tag('logo.png', { :height => 64,:alt => 'ロゴ'}),  products_url %>
       <table class="menu">
         <tbody>
             <tr>
@@ -24,8 +21,11 @@
           </tbody>
         </table>
     <% else %>
-    <h1>動画共有さいと</h1>
+    <%= image_tag('logo.png', { :height => 64,:alt => 'ロゴ'})%>
     <% end %>
+    <section>
+      <p class="flash"><%= notice %><%= alert %></p>
+    </section>
   </header>
 
   <%= yield %>

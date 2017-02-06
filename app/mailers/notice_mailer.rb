@@ -5,7 +5,7 @@ class NoticeMailer < ApplicationMailer
   #
   #   en.notice_mailer.sendmail_photo.subject
   #
-  def sendmail_photo
+  def sendmail_photo(product)
     @product = product
 
     mail to: "osukecg@gmail.com",

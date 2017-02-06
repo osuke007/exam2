@@ -29,12 +29,12 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
+    @product.user_id = current_user.id
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
-        NoticeMailer.sendmail_photo(@photo).deliver
+        NoticeMailer.sendmail_photo(@product).deliver
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }

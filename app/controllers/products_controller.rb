@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
+        NoticeMailer.sendmail_photo(@photo).deliver
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }

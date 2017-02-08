@@ -4,16 +4,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-  end
-
-  def index2
-    @products = Product.all
+    @product = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @product = Product.find(params[:id])
   end
 
   # GET /products/new
@@ -59,6 +56,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

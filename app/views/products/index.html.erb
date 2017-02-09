@@ -26,11 +26,22 @@
   </tbody>
 </table>
 
+<table>
 <% @product.each do |product| %>
-  <% if product.user_id == current_user.id then %>
-  　<%= link_to image_tag(product.image_url(:thumb).to_s), product %>
+ <% if product.user_id == current_user.id then %>
+    <tr>
+       <td><%= link_to image_tag(product.image_url(:thumb).to_s), product %></td>
+       <td><%= User.find(product.user_id).name %>|<%= link_to 'Edit', edit_product_path(product) %>|<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% else %>
+    <tr>
+       <td><%= image_tag(product.image_url(:thumb).to_s) %></td>
+       <td><%= User.find(product.user_id).name %></td>
+    </tr>
   <% end %>
 <% end %>
+</table>
+
 
 <% @imageurl %>
 <br>

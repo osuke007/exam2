@@ -1,2 +1,18 @@
-<li><%= link_to 'ログイン', new_user_session_path  %></li>
-<li><%= link_to 'サインアップ', new_user_registration_path %></li>
+<div class="main-menu">
+  <div class="container">
+    <div class="form row">
+      <div class="hidden-xs col-sm-6"><%= image_tag('top-image.jpg')%></div>
+      <div class="col-xs-12 col-sm-6" >
+        <%= image_tag('logo.png', { :height => 64,:alt => 'ロゴ'})%>
+        <br>
+        みんなで写真を共有しよう
+        <br>
+        <%= link_to image_tag('fb_login.png', { :height => 50,:alt => 'ロゴ'}), user_facebook_omniauth_authorize_path %>
+        <br><br>
+        <%= link_to image_tag('tw_login.png', { :height => 50,:alt => 'ロゴ'}), user_twitter_omniauth_authorize_path %>
+        <br><br>
+        <%= link_to image_tag('ml_login.png', { :height => 50,:alt => 'ロゴ'}), user_session_path %>
+      </div>
+    </div>
+  </div>
+</div>

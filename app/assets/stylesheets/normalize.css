@@ -463,3 +463,7 @@ template {
 img {
   max-width: 100%;
 }
+
+.flash{
+  color: red;
+}

@@ -9,20 +9,35 @@
 <body>
   <header>
     <% if user_signed_in? %>
-      <%= link_to image_tag('logo.png', { :height => 64,:alt => 'ロゴ'}),  products_url %>
-      <table class="menu">
-        <tbody>
-            <tr>
-              <td><%= image_tag("compass.png", {:size => "32x32", :alt => 'compass'}) %></td>
-              <td><%= image_tag("heart.png", {:size => "32x32", :alt => 'heart'}) %></td>
-              <td><%= link_to image_tag('profile.png', {:size => "32x32", :alt => 'プロファイル'}), edit_user_registration_path %></td>
-              <td><%= link_to image_tag('logout.png', {:size => "32x32", :alt => 'ログアウト'}), destroy_user_session_path, method: :delete %></td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- 1.ナビゲーションバーの設定 -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+          <!-- 2.ヘッダ情報 -->
+          <div class="navbar-header">
+            <%= link_to image_tag('logo.png', { :height => 50,:alt => 'ロゴ', :class=>'logo-nav'}),  root_url %>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+              <span class="sr-only">メニュー</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+          <!-- 3.リストの配置 -->
+        <div id="gnavi" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+             <li><%= link_to 'プロフィール', edit_user_registration_path %></li>
+             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
     <% end %>
     <section>
-      <p class="flash"><%= notice %><%= alert %></p>
+      <p class="flash"><%= notice %></p>
     </section>
   </header>
 

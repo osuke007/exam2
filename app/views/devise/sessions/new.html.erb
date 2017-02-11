@@ -3,7 +3,7 @@
     <div class="form row">
       <div class="hidden-xs col-sm-6"><%= image_tag('top-image.jpg')%></div>
       <div class="col-xs-12 col-sm-6" >
-        <%= link_to image_tag('logo.png', { :height => 64,:alt => 'ロゴ', :class=>'logo-nav'}),  root_url %>
+        <%= link_to image_tag('logo.png', { :height => 64,:alt => 'ロゴ', :class=>'logo-nav'}), root_url %>
         <br>
         <h2>ログイン</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,7 +12,6 @@
             <%= f.input :password, required: false %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
-          <p class="flash"><%= alert %></p>
           <div class="form-actions">
             <%= f.button :submit, "Log in" %>
           </div>

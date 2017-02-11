@@ -1,6 +1,7 @@
-<h1>Editing Product</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<div class=main>
+  <h1>画像を変更</h1>
+  <%= image_tag @product.image_url %>
+  <br>
+  <%= render 'form' %>
+  <%= link_to "キャンセル", products_url %>
+</div>

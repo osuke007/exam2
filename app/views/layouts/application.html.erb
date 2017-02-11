@@ -14,14 +14,13 @@
       <div class="container">
           <!-- 2.ヘッダ情報 -->
           <div class="navbar-header">
-            <%= link_to image_tag('logo.png', { :height => 50,:alt => 'ロゴ', :class=>'logo-nav'}),  root_url %>
+            <%= link_to image_tag('logo.png', { :height => 50,:alt => 'ロゴ', :class=>'logo-nav'}), products_url %>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
               <span class="sr-only">メニュー</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-
           </div>
           <!-- 3.リストの配置 -->
         <div id="gnavi" class="collapse navbar-collapse">
@@ -32,13 +31,8 @@
         </div>
       </div>
     </nav>
-
-
-
     <% end %>
-    <section>
-      <p class="flash"><%= notice %></p>
-    </section>
+      <p class="flash"><%= notice %><%= alert %></p>
   </header>
 
   <%= yield %>

@@ -4,13 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @product = Product.all
+    #@product = Product.all
+    @product = Product.order("updated_at desc")
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+
   end
 
   # GET /products/new
@@ -20,6 +22,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @product = Product.find(params[:id])
   end
 
   # POST /products
@@ -29,7 +32,7 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: 'アップロードが完了しました。' }
         format.json { render :show, status: :created, location: @product }
         NoticeMailer.sendmail_photo(@product).deliver
       else
@@ -42,9 +45,10 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product = Product.find(params[:id])
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: '更新が完了しました。' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -59,7 +63,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to products_url, notice: '写真を削除しました。' }
       format.json { head :no_content }
     end
   end

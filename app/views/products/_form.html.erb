@@ -1,9 +1,10 @@
 <%= form_for(@product) do |f| %>
-
+<!--
  <%= f.error_messages! %>
-
+  <%= f.label :画像をアップロード %><br>
+-->
+<br>
   <div class=field>
-    <%= f.label :form_image %><br>
     <%= f.file_field :image %>
   </div>
 

@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: 'sleepy-hamlet-48910' }
+  config.action_mailer.default_url_options = { host: 'sleepy-hamlet-48910.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
